@@ -33,38 +33,38 @@ public:
 
 	void inserirAux(No *no, int chave)
 	{
-		// se for menor, ent?o insere ? esquerda
+		// se for menor, então insere á esquerda
 		if(chave < no->getChave())
 		{
-			// verifica se a esquerda ? nulo
+			// verifica se a esquerda é nulo
 			if(no->getEsq() == NULL)
 			{
 				No *novo_no = new No(chave);
-				no->setEsq(novo_no); // seta o novo_no ? esquerda
+				no->setEsq(novo_no); // seta o novo_no á esquerda
 			}
 			else
 			{
-				// sen?o, continua percorrendo recursivamente
+				// senão, continua percorrendo recursivamente
 				inserirAux(no->getEsq(), chave);
 			}
 		}
-		// se for maior, ent?o insere ? direita
+		// se for maior, então insere á direita
 		else if(chave > no->getChave())
 		{
-			// verifica se a direita ? nulo
+			// verifica se a direita é nula
 			if(no->getDir() == NULL)
 			{
 				No *novo_no = new No(chave);
-				no->setDir(novo_no); // seta o novo_no ? direita
+				no->setDir(novo_no); // seta o novo_no á direita
 			}
 			else
 			{
-				// sen?o, continua percorrendo recursivamente
+				// senão, continua percorrendo recursivamente
 				inserirAux(no->getDir(), chave);
 			}
 		}
-		// se for igual, n?o vai inserir
-		// n?o pode existir 2 chaves iguais
+		// se for igual, não vai inserir
+		// não pode existir 2 chaves iguais
 	}
 
 	No* getRaiz()
@@ -122,6 +122,11 @@ public:
 			
 		}		
 	}
+	
+	int buscarElemento(int elemento)
+	{
+		encontrarElemento(raiz,elemento);
+	}
     
     //Verifica o menor valor da esquerda
 	void menorValor(No* no)
@@ -155,40 +160,11 @@ public:
 		}
 	}
 	
-	int imprimirEmOrdem()
-	{
-		emOrdem(raiz);
-	}
-	
-	int imprimirPreOrdem()
-	{
-		preOrdem(raiz);
-	}
-	
-	int imprimirPosOrdem()
-	{
-		posOrdem(raiz);
-		
-	}
-	
+	//Printa a quantidade de elementos
 	int qtdElementos()
 	{
 		cout << qtdNo << " ";
 	}
 	
-	int buscarElemento(int elemento)
-	{
-		encontrarElemento(raiz,elemento);
-		
-	}
-	
-	int acharMenorValor()
-	{
-		menorValor(raiz);
-	}
-	
-	int acharMaiorrValor()
-	{
-		maiorValor(raiz);
-	}
+
 };

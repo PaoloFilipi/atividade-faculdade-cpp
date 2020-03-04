@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
 	setlocale(LC_ALL, "portuguese-brazilian"); // para resolver o problema de acentos
-	Arvore arv;;
+	Arvore arv;
 
 
 	while (true) {
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
 		//imprimir a árvore em ordem
 		else if(opc == 2){
 			cout <<"\n\n--- Sua árvore em ordem crescente ---\n";
-			arv.imprimirEmOrdem();
+			arv.emOrdem(arv.getRaiz());
 			cout << "\n\n------------------------------------";
 			cout << "\n\n";	
 		}
@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
 		//imprimir a árvore em pré-ordem
 		else if(opc == 3){
 			cout <<"\n\n--- Sua árvore em Pré-Ordem ---\n";
-			arv.imprimirPreOrdem();
+			arv.preOrdem(arv.getRaiz());
 			cout << "\n\n------------------------------------";
 			cout << "\n\n";
 		}
@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 		//imprimir a árvore em pós-ordem
 		else if(opc == 4){
 			cout <<"\n\n--- Sua árvore em Pós-Ordem ---\n";
-			arv.imprimirPosOrdem();
+			arv.posOrdem(arv.getRaiz());
 			cout << "\n\n------------------------------------";
 			cout << "\n\n";
 		}
@@ -80,7 +80,7 @@ int main(int argc, char** argv) {
 			cin >> elemento;
 			if(arv.buscarElemento(elemento) == true){
 				cout << "\n --- Resultado da consulta ---\n";
-				cout << "\nO elemento esta na árvore";
+				cout << "\nO elemento está na árvore";
 				cout << "\n\n------------------------------------";
 				cout << "\n\n";
 			}else{
@@ -94,7 +94,7 @@ int main(int argc, char** argv) {
 		//encontrar o menor elemento da árvore
 		else if(opc == 7){
 			cout << "\n -- O menor valor da sua árvore é --\n";
-			arv.acharMenorValor();
+			arv.menorValor(arv.getRaiz());
 			cout << "\n\n------------------------------------";
 			cout << "\n\n";
 		}
@@ -102,7 +102,7 @@ int main(int argc, char** argv) {
 		//encontrar o maior elemento da árvore
 		else if(opc == 8){
 			cout << "\n -- O maior elemento da árvore é --\n";
-			arv.acharMaiorrValor();
+			arv.maiorValor(arv.getRaiz() );
 			cout << "\n\n------------------------------------";
 			cout << "\n\n";
 		}
